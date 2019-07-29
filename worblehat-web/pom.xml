@@ -82,6 +82,26 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
+
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+
+				<configuration>
+					<images>
+						<image>
+							<name>worblehat/web</name>
+							<build>
+								<contextDir>${project.basedir}/src/main/docker</contextDir>
+								<assembly>
+									<descriptor>${project.basedir}/src/main/docker/assembly.xml</descriptor>
+									<mode>dir</mode>
+								</assembly>
+							</build>
+						</image>
+					</images>
+				</configuration>
+			</plugin>
         </plugins>
 	</build>
 

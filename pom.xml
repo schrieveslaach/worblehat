@@ -52,6 +52,23 @@
     </repositories>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>io.fabric8</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>0.31.0</version>
+
+                    <dependencies>
+                        <dependency>
+                            <groupId>io.fabric8</groupId>
+                            <artifactId>run-java-sh</artifactId>
+                            <version>1.3.4</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

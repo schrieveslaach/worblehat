@@ -26,10 +26,11 @@ docker run --detach \
   --publish 3306:3306 \
   mysql:5.6.25
 ```
-3. Run the application. In the directory `worblehat-web`:
-  * Either run `mvn spring-boot:run`
-  * Or start as plain Java main class: `de.codecentric.Application`
-4. Access the application at <http://localhost:8080/worblehat/>
+3. Build the Docker image to run the application
+  * `mvn clean install`
+  * `mvn docker:build -f worblehat-web`
+  * `docker run --name worblehat -d -p 8080:8080 --link worblehat-db worblehat/web`
+4. Access the application at <http://localhost:8080/>
 
 ## Running acceptance tests
 
